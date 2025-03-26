@@ -36,7 +36,7 @@ function resetAllDefaults()
         if (isfield(p, factoryPropertyName))
             set(groot, setDefaultProperties{k}, p.(factoryPropertyName));
         else
-            fprintf(2,'plotlab.(%s): ''%s'' not found in groot.\n', mfilename(), factoryPropertyName);
+            warning('plotlab.(%s): ''%s'' not found in groot.\n', mfilename(), factoryPropertyName);
         end
     end
 end

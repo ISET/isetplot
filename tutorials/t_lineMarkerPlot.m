@@ -70,6 +70,7 @@ function t_lineMarkerPlot()
     plotlabOBJ.exportFig(hFig, 'png', 'mRGCsf', 'gallery');
 end
 
+%%
 function [sf, s, c, r, sfModel, sModel, cModel, rModel, b] = getData()
     sfModel = logspace(log10(0.1), log10(100), 40);
     b = 0.15*ones(size(sfModel));

@@ -46,7 +46,7 @@ plotlabOBJ.applyRecipe(...
     'figureHeightInches', 8);
 
 % New figure
-hFig = ieFigure; clf; hold on;
+ieFigure; clf; hold on;
 
 % Area plots filled with the LMSconeColors
 % The first area plot is filled with the first LMSconeColor,
@@ -64,7 +64,7 @@ set(gca, 'XLim', [400 780], 'XTick', 350:50:850);
 xlabel('\it Wavelength (nm)'); ylabel('\it Radiance (watts/sr/nm/m^2');
 
 % Legend
-lHandle = legend({'R', 'G', 'B'},'location','northeast');
+legend({'R', 'G', 'B'},'location','northeast');
 
 % Reposition the legend
 % plotlabOBJ.repositionLegend(lHandle, [0.78 0.77]);
