@@ -24,14 +24,14 @@ function exportFig(obj, hFig, graphicFormat, fileName, fileDir)
 % History:
 %    03/21/20  NPC  Wrote it
 
-    if (strcmp(fileDir, 'gallery'))
-        p = getpref('plotlab');
-        fName = fullfile(p.galleryDir, fileName);
-    else
-        fName = fullfile(fileDir, fileName);
-    end
-    fName = sprintf('%s-%s.%s', fName, obj.lightTheme, lower(graphicFormat));
-    print(hFig, fName, sprintf('-d%s', lower(graphicFormat)), '-r300');
-    fprintf('Figure exported to ''%s''.\n', fName);
+if (strcmp(fileDir, 'gallery'))
+    dirName = getpref('plotlab','galleryDir',fullfile(iplotRootPath,'gallery'));
+    fName = fullfile(dirName, fileName);
+else
+    fName = fullfile(fileDir, fileName);
+end
+fName = sprintf('%s-%s.%s', fName, obj.lightTheme, lower(graphicFormat));
+print(hFig, fName, sprintf('-d%s', lower(graphicFormat)), '-r300');
+fprintf('Figure exported to ''%s''.\n', fName);
 end
 
