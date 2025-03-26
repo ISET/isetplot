@@ -42,11 +42,11 @@ plotlabOBJ = plotlab();
 % the color order and the figure size
 plotlabOBJ.applyRecipe(...
     'colorOrder', LMSconeColors, ...
-    'figureWidthInches', 5, ...
-    'figureHeightInches', 5);
+    'figureWidthInches', 8, ...
+    'figureHeightInches', 8);
 
 % New figure
-hFig = figure(1); clf; hold on;
+hFig = ieFigure; clf; hold on;
 
 % Area plots filled with the LMSconeColors
 % The first area plot is filled with the first LMSconeColor,
@@ -58,21 +58,21 @@ area(wave, G); hold on;
 area(wave, B); hold on;
 
 % Axes limits and ticks
-set(gca, 'XLim', [400 700], 'XTick', 350:50:850);
+set(gca, 'XLim', [400 780], 'XTick', 350:50:850);
 
 % Labels
-xlabel('\it wavelength (nm)'); ylabel('\it Radiance (watts/sr/nm/m^2');
+xlabel('\it Wavelength (nm)'); ylabel('\it Radiance (watts/sr/nm/m^2');
 
 % Legend
-lHandle = legend({'R', 'G', 'B'});
+lHandle = legend({'R', 'G', 'B'},'location','northeast');
 
 % Reposition the legend
-plotlabOBJ.repositionLegend(lHandle, [0.78 0.77]);
+% plotlabOBJ.repositionLegend(lHandle, [0.78 0.77]);
 
 % Title
 % title(sprintf('Stockman-Sharpe cone nomograms'));
 
 % Export the figure to the gallery directory in PNG format
-plotlabOBJ.exportFig(hFig, 'png', 'displayRGB', 'gallery');
+% plotlabOBJ.exportFig(hFig, 'png', 'displayRGB', 'gallery');
 end
 
